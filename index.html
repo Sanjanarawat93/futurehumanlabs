@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Future Human Lab AI</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background:#f6f6f6;
+color:#111;
+}
+
+header{
+background:white;
+border-bottom:1px solid #e5e5e5;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#111;
+font-weight:500;
+}
+
+.hero{
+padding:100px 10%;
+background:#111;
+color:white;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+max-width:600px;
+}
+
+.section{
+padding:80px 10%;
+}
+
+.section h2{
+margin-bottom:30px;
+font-size:32px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.tools{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.tool{
+background:white;
+padding:20px 30px;
+border-radius:8px;
+border:1px solid #e5e5e5;
+}
+
+.roadmap ul{
+list-style:none;
+padding:0;
+}
+
+.roadmap li{
+background:white;
+margin-bottom:10px;
+padding:15px;
+border-radius:6px;
+border:1px solid #e5e5e5;
+}
+
+footer{
+padding:40px 10%;
+text-align:center;
+background:#111;
+color:white;
+margin-top:60px;
+}
+
+button{
+padding:12px 18px;
+margin-bottom:30px;
+background:#111;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+[contenteditable]{
+outline:2px dashed transparent;
+}
+
+[contenteditable]:focus{
+outline:2px dashed #aaa;
+background:#fafafa;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h2 contenteditable="true">Future Human Lab AI</h2>
+
+<nav>
+<a href="#learnings">Learnings</a>
+<a href="#tools">Tools</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#about">About</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1 contenteditable="true">Future Human Lab AI</h1>
+
+<p contenteditable="true">
+Exploring how humans can think, create, and work with AI tools.
+Daily lessons from the AI learning journey.
+</p>
+
+</section>
+
+
+<section class="section" id="learnings">
+
+<h2>AI Learning Feed</h2>
+
+<button onclick="addLesson()">Add New Lesson</button>
+
+<div id="lessonGrid" class="grid"></div>
+
+</section>
+
+
+
+<section class="section" id="tools">
+
+<h2>AI Tools Lab</h2>
+
+<div class="tools">
+
+<div class="tool" contenteditable="true">ChatGPT</div>
+<div class="tool" contenteditable="true">Midjourney</div>
+<div class="tool" contenteditable="true">Claude</div>
+<div class="tool" contenteditable="true">Perplexity</div>
+<div class="tool" contenteditable="true">Runway</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section roadmap" id="roadmap">
+
+<h2>Learning Roadmap</h2>
+
+<ul>
+
+<li contenteditable="true">Prompt Engineering</li>
+<li contenteditable="true">AI Agents</li>
+<li contenteditable="true">Automation with AI</li>
+<li contenteditable="true">AI + Creativity</li>
+<li contenteditable="true">Building AI Tools</li>
+<li contenteditable="true">Local AI Models</li>
+
+</ul>
+
+</section>
+
+
+
+<section class="section" id="about">
+
+<h2>About</h2>
+
+<p contenteditable="true">
+Future Human Lab AI is a personal project documenting the journey of learning how humans and artificial intelligence can collaborate. Each lesson captures a small insight about using AI tools more effectively.
+</p>
+
+</section>
+
+
+
+<footer>
+
+Future Human Lab AI  
+Documenting the journey of learning with AI.
+
+</footer>
+
+
+
+<script>
+
+let lessons = JSON.parse(localStorage.getItem("lessons")) || [
+
+{
+title:"AI Lesson #001 – Context Matters",
+text:"AI performs much better when given context about the goal and audience.",
+insight:"Future humans will brief AI like a collaborator."
+}
+
+]
+
+function renderLessons(){
+
+let grid=document.getElementById("lessonGrid")
+
+grid.innerHTML=""
+
+lessons.forEach((lesson,index)=>{
+
+let card=document.createElement("div")
+card.className="card"
+
+card.innerHTML=`
+
+<img src="https://picsum.photos/400/200?random=${index}">
+
+<div class="card-content">
+
+<h3 contenteditable="true" oninput="updateLesson(${index},'title',this.innerText)">
+${lesson.title}
+</h3>
+
+<p contenteditable="true" oninput="updateLesson(${index},'text',this.innerText)">
+${lesson.text}
+</p>
+
+<strong>Future Human Insight</strong>
+
+<p contenteditable="true" oninput="updateLesson(${index},'insight',this.innerText)">
+${lesson.insight}
+</p>
+
+</div>
+
+`
+
+grid.appendChild(card)
+
+})
+
+}
+
+function updateLesson(index,field,value){
+
+lessons[index][field]=value
+localStorage.setItem("lessons",JSON.stringify(lessons))
+
+}
+
+function addLesson(){
+
+lessons.push({
+title:"New AI Lesson",
+text:"What did you learn today?",
+insight:"Future human insight."
+})
+
+localStorage.setItem("lessons",JSON.stringify(lessons))
+renderLessons()
+
+}
+
+renderLessons()
+
+</script>
+
+</body>
+</html>
