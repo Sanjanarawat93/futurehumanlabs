@@ -12,40 +12,51 @@
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0b0f;
-color:#e8e8f0;
+font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
+background:#050507;
+color:#eaeaf0;
 }
 
+/* HEADER */
+
 header{
-background:#0f0f14;
-border-bottom:1px solid rgba(255,255,255,0.05);
-padding:20px 10%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:20px 10%;
 position:sticky;
 top:0;
+background:rgba(10,10,15,0.7);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 nav a{
 margin-left:25px;
 text-decoration:none;
 color:#bbb;
-font-weight:500;
+font-size:15px;
 }
 
 nav a:hover{
 color:white;
 }
 
+/* HERO */
+
 .hero{
-padding:120px 10%;
-background:linear-gradient(180deg,#0b0b0f,#050507);
+
+padding:140px 10%;
+
+background:
+radial-gradient(circle at 70% 20%,rgba(255,120,80,0.15),transparent 40%),
+radial-gradient(circle at 30% 80%,rgba(120,180,255,0.15),transparent 40%),
+#050507;
+
 }
 
 .hero h1{
-font-size:52px;
+font-size:56px;
 margin-bottom:20px;
 }
 
@@ -53,16 +64,21 @@ margin-bottom:20px;
 font-size:20px;
 max-width:650px;
 color:#aaa;
+line-height:1.6;
 }
 
+/* SECTIONS */
+
 .section{
-padding:90px 10%;
+padding:100px 10%;
 }
 
 .section h2{
 font-size:34px;
 margin-bottom:40px;
 }
+
+/* LIBRARY GRID */
 
 .grid{
 display:grid;
@@ -71,11 +87,20 @@ gap:35px;
 }
 
 .card{
-background:#14141a;
-border-radius:12px;
+
+background:rgba(255,255,255,0.03);
+border-radius:14px;
+border:1px solid rgba(255,255,255,0.06);
+backdrop-filter:blur(10px);
+
 overflow:hidden;
-border:1px solid rgba(255,255,255,0.05);
-box-shadow:0 20px 60px rgba(0,0,0,0.6);
+
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 30px 70px rgba(0,0,0,0.6);
 }
 
 .card img{
@@ -88,6 +113,8 @@ object-fit:cover;
 padding:22px;
 }
 
+/* TOOLS */
+
 .tools{
 display:flex;
 flex-wrap:wrap;
@@ -95,11 +122,16 @@ gap:20px;
 }
 
 .tool{
-background:#14141a;
+
 padding:18px 28px;
 border-radius:10px;
-border:1px solid rgba(255,255,255,0.06);
+
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.05);
+
 }
+
+/* ROADMAP */
 
 .roadmap ul{
 list-style:none;
@@ -107,12 +139,20 @@ padding:0;
 }
 
 .roadmap li{
-background:#14141a;
-margin-bottom:12px;
+
+background:rgba(255,255,255,0.03);
+
 padding:16px;
+
+margin-bottom:12px;
+
 border-radius:8px;
+
 border:1px solid rgba(255,255,255,0.05);
+
 }
+
+/* SERVICES */
 
 .services ul{
 list-style:none;
@@ -123,12 +163,28 @@ padding:0;
 margin-bottom:12px;
 }
 
+/* CONTACT */
+
+.contact{
+
+background:linear-gradient(120deg,#111,#060606);
+
+border-radius:20px;
+
+padding:60px;
+
+border:1px solid rgba(255,255,255,0.05);
+
+}
+
+/* FOOTER */
+
 footer{
-padding:50px 10%;
+padding:60px 10%;
 text-align:center;
-background:#050507;
 color:#777;
-margin-top:60px;
+background:#030303;
+margin-top:80px;
 }
 
 </style>
@@ -138,16 +194,18 @@ margin-top:60px;
 
 <body>
 
+
 <header>
 
 <h2>Future Human Lab</h2>
 
 <nav>
 
-<a href="#library">Intelligence Library</a>
+<a href="#library">Library</a>
 <a href="#tools">Tools</a>
 <a href="#roadmap">Roadmap</a>
 <a href="#services">Services</a>
+<a href="#contact">Contact</a>
 <a href="#about">About</a>
 
 </nav>
@@ -161,9 +219,12 @@ margin-top:60px;
 <h1>Future Human Lab</h1>
 
 <p>
-Exploring how humans and artificial intelligence can think, create,
-and build together. Documenting the journey of learning and
-working with AI tools.
+
+Exploring the intersection of human creativity and artificial intelligence.
+
+A living archive of insights about how humans and AI can think,
+build, and evolve together.
+
 </p>
 
 </section>
@@ -222,9 +283,10 @@ working with AI tools.
 <h2>Services</h2>
 
 <p>
-Future Human Lab provides consulting on how individuals and
-organizations can effectively integrate artificial intelligence
-into their workflows.
+
+Future Human Lab offers consulting and strategic guidance for
+individuals and organizations navigating the AI transition.
+
 </p>
 
 <ul>
@@ -237,8 +299,33 @@ into their workflows.
 </ul>
 
 <p>
-For consulting inquiries please contact directly.
+Contact us for more information.
 </p>
+
+</section>
+
+
+
+<section class="section" id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact">
+
+<p>
+
+If you are interested in collaborating, consulting, or learning
+more about Future Human Lab, please reach out.
+
+</p>
+
+<p>
+
+Email: <strong>contact@email.com</strong>
+
+</p>
+
+</div>
 
 </section>
 
@@ -249,10 +336,13 @@ For consulting inquiries please contact directly.
 <h2>About</h2>
 
 <p>
-Future Human Lab is an exploration of how humans and AI can
-collaborate creatively and productively. The Intelligence Library
-documents insights from experimenting with AI tools, building
-systems, and developing new workflows for the future of work.
+
+Future Human Lab explores how humans and artificial intelligence
+can collaborate creatively and productively.
+
+The Intelligence Library captures insights from experimenting
+with AI systems, tools, and workflows.
+
 </p>
 
 </section>
@@ -262,7 +352,7 @@ systems, and developing new workflows for the future of work.
 <footer>
 
 Future Human Lab  
-Exploring the future of human + AI collaboration.
+Human + AI collaboration for the future.
 
 </footer>
 
@@ -295,6 +385,7 @@ grid.innerHTML=""
 lessons.forEach((lesson,index)=>{
 
 let card=document.createElement("div")
+
 card.className="card"
 
 card.innerHTML=`
