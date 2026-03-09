@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Future Human Lab AI</title>
+<title>Future Human Lab</title>
 
 <style>
 
 body{
 margin:0;
-font-family: Arial, Helvetica, sans-serif;
-background:#f6f6f6;
-color:#111;
+font-family:Arial, Helvetica, sans-serif;
+background:#0b0b0f;
+color:#e8e8f0;
 }
 
 header{
-background:white;
-border-bottom:1px solid #e5e5e5;
+background:#0f0f14;
+border-bottom:1px solid rgba(255,255,255,0.05);
 padding:20px 10%;
 display:flex;
 justify-content:space-between;
@@ -27,48 +29,53 @@ top:0;
 }
 
 nav a{
-margin-left:20px;
+margin-left:25px;
 text-decoration:none;
-color:#111;
+color:#bbb;
 font-weight:500;
 }
 
-.hero{
-padding:100px 10%;
-background:#111;
+nav a:hover{
 color:white;
 }
 
+.hero{
+padding:120px 10%;
+background:linear-gradient(180deg,#0b0b0f,#050507);
+}
+
 .hero h1{
-font-size:48px;
+font-size:52px;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:20px;
-max-width:600px;
+max-width:650px;
+color:#aaa;
 }
 
 .section{
-padding:80px 10%;
+padding:90px 10%;
 }
 
 .section h2{
-margin-bottom:30px;
-font-size:32px;
+font-size:34px;
+margin-bottom:40px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
 }
 
 .card{
-background:white;
-border-radius:8px;
+background:#14141a;
+border-radius:12px;
 overflow:hidden;
-box-shadow:0 4px 12px rgba(0,0,0,0.05);
+border:1px solid rgba(255,255,255,0.05);
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 
 .card img{
@@ -78,7 +85,7 @@ object-fit:cover;
 }
 
 .card-content{
-padding:20px;
+padding:22px;
 }
 
 .tools{
@@ -88,10 +95,10 @@ gap:20px;
 }
 
 .tool{
-background:white;
-padding:20px 30px;
-border-radius:8px;
-border:1px solid #e5e5e5;
+background:#14141a;
+padding:18px 28px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.06);
 }
 
 .roadmap ul{
@@ -100,76 +107,72 @@ padding:0;
 }
 
 .roadmap li{
-background:white;
-margin-bottom:10px;
-padding:15px;
-border-radius:6px;
-border:1px solid #e5e5e5;
+background:#14141a;
+margin-bottom:12px;
+padding:16px;
+border-radius:8px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.services ul{
+list-style:none;
+padding:0;
+}
+
+.services li{
+margin-bottom:12px;
 }
 
 footer{
-padding:40px 10%;
+padding:50px 10%;
 text-align:center;
-background:#111;
-color:white;
+background:#050507;
+color:#777;
 margin-top:60px;
 }
 
-button{
-padding:12px 18px;
-margin-bottom:30px;
-background:#111;
-color:white;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-
-[contenteditable]{
-outline:2px dashed transparent;
-}
-
-[contenteditable]:focus{
-outline:2px dashed #aaa;
-background:#fafafa;
-}
-
 </style>
+
 </head>
+
 
 <body>
 
 <header>
 
-<h2 contenteditable="true">Future Human Lab AI</h2>
+<h2>Future Human Lab</h2>
 
 <nav>
-<a href="#learnings">Learnings</a>
+
+<a href="#library">Intelligence Library</a>
 <a href="#tools">Tools</a>
 <a href="#roadmap">Roadmap</a>
+<a href="#services">Services</a>
 <a href="#about">About</a>
+
 </nav>
 
 </header>
 
 
+
 <section class="hero">
 
-<h1 contenteditable="true">Future Human Lab AI</h1>
+<h1>Future Human Lab</h1>
 
-<p contenteditable="true">
-Exploring how humans can think, create, and work with AI tools.
-Daily lessons from the AI learning journey.
+<p>
+Exploring how humans and artificial intelligence can think, create,
+and build together. Documenting the journey of learning and
+working with AI tools.
 </p>
 
 </section>
 
 
-<section class="section" id="learnings">
 
-<h2>AI Learning Feed</h2>
+<section class="section" id="library">
 
-<button onclick="addLesson()">Add New Lesson</button>
+<h2>Intelligence Library</h2>
 
 <div id="lessonGrid" class="grid"></div>
 
@@ -183,11 +186,11 @@ Daily lessons from the AI learning journey.
 
 <div class="tools">
 
-<div class="tool" contenteditable="true">ChatGPT</div>
-<div class="tool" contenteditable="true">Midjourney</div>
-<div class="tool" contenteditable="true">Claude</div>
-<div class="tool" contenteditable="true">Perplexity</div>
-<div class="tool" contenteditable="true">Runway</div>
+<div class="tool">ChatGPT</div>
+<div class="tool">Midjourney</div>
+<div class="tool">Claude</div>
+<div class="tool">Perplexity</div>
+<div class="tool">Runway</div>
 
 </div>
 
@@ -201,14 +204,41 @@ Daily lessons from the AI learning journey.
 
 <ul>
 
-<li contenteditable="true">Prompt Engineering</li>
-<li contenteditable="true">AI Agents</li>
-<li contenteditable="true">Automation with AI</li>
-<li contenteditable="true">AI + Creativity</li>
-<li contenteditable="true">Building AI Tools</li>
-<li contenteditable="true">Local AI Models</li>
+<li>Prompt Engineering</li>
+<li>AI Agents</li>
+<li>Automation with AI</li>
+<li>AI + Creativity</li>
+<li>Building AI Tools</li>
+<li>Local AI Models</li>
 
 </ul>
+
+</section>
+
+
+
+<section class="section services" id="services">
+
+<h2>Services</h2>
+
+<p>
+Future Human Lab provides consulting on how individuals and
+organizations can effectively integrate artificial intelligence
+into their workflows.
+</p>
+
+<ul>
+
+<li>AI Strategy Consulting</li>
+<li>Human + AI Workflow Design</li>
+<li>AI Learning Programs</li>
+<li>Future Skills Development</li>
+
+</ul>
+
+<p>
+For consulting inquiries please contact directly.
+</p>
 
 </section>
 
@@ -218,8 +248,11 @@ Daily lessons from the AI learning journey.
 
 <h2>About</h2>
 
-<p contenteditable="true">
-Future Human Lab AI is a personal project documenting the journey of learning how humans and artificial intelligence can collaborate. Each lesson captures a small insight about using AI tools more effectively.
+<p>
+Future Human Lab is an exploration of how humans and AI can
+collaborate creatively and productively. The Intelligence Library
+documents insights from experimenting with AI tools, building
+systems, and developing new workflows for the future of work.
 </p>
 
 </section>
@@ -228,8 +261,8 @@ Future Human Lab AI is a personal project documenting the journey of learning ho
 
 <footer>
 
-Future Human Lab AI  
-Documenting the journey of learning with AI.
+Future Human Lab  
+Exploring the future of human + AI collaboration.
 
 </footer>
 
@@ -237,12 +270,18 @@ Documenting the journey of learning with AI.
 
 <script>
 
-let lessons = JSON.parse(localStorage.getItem("lessons")) || [
+let lessons=[
 
 {
 title:"AI Lesson #001 – Context Matters",
-text:"AI performs much better when given context about the goal and audience.",
-insight:"Future humans will brief AI like a collaborator."
+text:"AI performs dramatically better when given context about the goal and audience.",
+insight:"Future humans will brief AI like collaborators."
+},
+
+{
+title:"AI Lesson #002 – Iteration Beats Perfection",
+text:"AI works best through rapid iteration rather than trying to get the perfect prompt first.",
+insight:"The best AI users explore rather than command."
 }
 
 ]
@@ -264,19 +303,13 @@ card.innerHTML=`
 
 <div class="card-content">
 
-<h3 contenteditable="true" oninput="updateLesson(${index},'title',this.innerText)">
-${lesson.title}
-</h3>
+<h3>${lesson.title}</h3>
 
-<p contenteditable="true" oninput="updateLesson(${index},'text',this.innerText)">
-${lesson.text}
-</p>
+<p>${lesson.text}</p>
 
 <strong>Future Human Insight</strong>
 
-<p contenteditable="true" oninput="updateLesson(${index},'insight',this.innerText)">
-${lesson.insight}
-</p>
+<p>${lesson.insight}</p>
 
 </div>
 
@@ -288,29 +321,10 @@ grid.appendChild(card)
 
 }
 
-function updateLesson(index,field,value){
-
-lessons[index][field]=value
-localStorage.setItem("lessons",JSON.stringify(lessons))
-
-}
-
-function addLesson(){
-
-lessons.push({
-title:"New AI Lesson",
-text:"What did you learn today?",
-insight:"Future human insight."
-})
-
-localStorage.setItem("lessons",JSON.stringify(lessons))
-renderLessons()
-
-}
-
 renderLessons()
 
 </script>
 
 </body>
+
 </html>
