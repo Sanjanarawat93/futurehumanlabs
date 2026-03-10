@@ -357,7 +357,7 @@ Human + AI collaboration for the future.
 
 <script>
 
-const NOTION_TOKEN="PASTE_SECRET_KEY_HERE"
+const NOTION_TOKEN="ntn_Y9552500394aZxZM439KlYK116QedQ337CZcuw3AVNZ6Jk"
 const DATABASE_ID="31e2395f96aa80c2a09cfb88fb28b2be"
 
 async function loadLessons(){
@@ -382,9 +382,13 @@ grid.innerHTML=""
 
 data.results.forEach((page,index)=>{
 
-let title=page.properties.Title.title[0]?.plain_text || ""
-let category=page.properties.Category.select?.name || ""
-let insight=page.properties["AI Insight"].rich_text[0]?.plain_text || ""
+let title=page.properties["Insight Title"].title[0]?.plain_text || ""
+
+let lesson=page.properties["Lesson"].rich_text[0]?.plain_text || ""
+
+let futureInsight=page.properties["Future Human Insight"].rich_text[0]?.plain_text || ""
+
+let aiInsight=page.properties["AI Insight"].rich_text[0]?.plain_text || ""
 
 let card=document.createElement("div")
 
@@ -398,11 +402,15 @@ card.innerHTML=`
 
 <h3>${title}</h3>
 
-<p>${category}</p>
+<p>${lesson}</p>
 
 <strong>Future Human Insight</strong>
 
-<p>${insight}</p>
+<p>${futureInsight}</p>
+
+<strong>AI Insight</strong>
+
+<p>${aiInsight}</p>
 
 </div>
 
