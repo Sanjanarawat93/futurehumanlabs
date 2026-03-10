@@ -18,7 +18,7 @@ color:#eaeaf0;
 line-height:1.6;
 }
 
-/* NAV */
+/* HEADER */
 
 header{
 display:flex;
@@ -27,9 +27,14 @@ align-items:center;
 padding:22px 10%;
 position:sticky;
 top:0;
-background:rgba(10,10,15,0.75);
+background:rgba(10,10,15,0.7);
 backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(255,255,255,0.05);
+z-index:1000;
+}
+
+header h2{
+font-weight:500;
 }
 
 nav a{
@@ -37,6 +42,7 @@ margin-left:28px;
 text-decoration:none;
 color:#aaa;
 font-size:15px;
+transition:0.3s;
 }
 
 nav a:hover{
@@ -50,61 +56,66 @@ color:white;
 padding:160px 10%;
 
 background:
-
-radial-gradient(circle at 20% 30%,rgba(255,160,120,0.2),transparent 40%),
-radial-gradient(circle at 80% 60%,rgba(120,180,255,0.18),transparent 40%),
-radial-gradient(circle at 50% 90%,rgba(255,120,200,0.12),transparent 40%),
+radial-gradient(circle at 20% 30%,rgba(255,150,120,0.15),transparent 40%),
+radial-gradient(circle at 80% 70%,rgba(120,170,255,0.15),transparent 40%),
+radial-gradient(circle at 50% 90%,rgba(255,200,140,0.12),transparent 40%),
 #050507;
 
 }
 
 .hero h1{
-font-size:60px;
+font-size:64px;
 margin-bottom:20px;
+letter-spacing:-1px;
 }
 
 .hero p{
-max-width:700px;
-color:#b5b5c2;
-font-size:20px;
+font-size:21px;
+max-width:650px;
+color:#a0a0a8;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
 padding:110px 10%;
 }
 
 .section h2{
-font-size:34px;
-margin-bottom:40px;
+font-size:36px;
+margin-bottom:45px;
+font-weight:500;
 }
 
-/* LIBRARY */
+/* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:36px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
 }
 
+/* LIBRARY CARDS */
+
 .card{
+
 background:rgba(255,255,255,0.03);
 border-radius:16px;
-border:1px solid rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.06);
 overflow:hidden;
+
 transition:0.35s;
-backdrop-filter:blur(12px);
+
 }
 
 .card:hover{
 transform:translateY(-8px);
-box-shadow:0 40px 90px rgba(0,0,0,0.6);
+box-shadow:0 40px 80px rgba(0,0,0,0.6);
 }
 
 .card img{
 width:100%;
-height:170px;
+height:160px;
 object-fit:cover;
 }
 
@@ -114,12 +125,7 @@ padding:24px;
 
 .card-content h3{
 margin-top:0;
-}
-
-.label{
-font-size:12px;
-color:#888;
-margin-top:10px;
+font-weight:500;
 }
 
 /* TOOLS */
@@ -131,10 +137,22 @@ gap:18px;
 }
 
 .tool{
+
 padding:16px 26px;
-border-radius:12px;
+border-radius:10px;
+
 background:rgba(255,255,255,0.03);
 border:1px solid rgba(255,255,255,0.05);
+
+color:#bbb;
+
+transition:0.3s;
+
+}
+
+.tool:hover{
+background:rgba(255,255,255,0.06);
+color:white;
 }
 
 /* ROADMAP */
@@ -145,40 +163,69 @@ padding:0;
 }
 
 .roadmap li{
+
 background:rgba(255,255,255,0.03);
-padding:18px;
-margin-bottom:14px;
-border-radius:10px;
 border:1px solid rgba(255,255,255,0.05);
+
+padding:16px;
+
+margin-bottom:12px;
+
+border-radius:8px;
+
 }
 
 /* SERVICES */
 
 .services{
-background:linear-gradient(120deg,#101014,#050505);
+
+background:linear-gradient(120deg,#0a0a10,#050505);
+
 border-radius:20px;
-padding:60px;
+
+padding:70px;
+
 border:1px solid rgba(255,255,255,0.05);
+
+}
+
+.services ul{
+list-style:none;
+padding:0;
+}
+
+.services li{
+margin-bottom:12px;
 }
 
 /* CONTACT */
 
 .contact{
-margin-top:30px;
-background:rgba(255,255,255,0.03);
+
+background:linear-gradient(140deg,#101015,#060606);
+
 border-radius:20px;
-padding:50px;
+
+padding:60px;
+
 border:1px solid rgba(255,255,255,0.05);
+
 }
 
 /* FOOTER */
 
 footer{
-padding:60px 10%;
+
+padding:80px 10%;
+
 text-align:center;
+
 color:#777;
+
 background:#030303;
-margin-top:80px;
+
+margin-top:120px;
+
 }
 
 </style>
@@ -229,7 +276,7 @@ and evolve together.
 
 <h2>Intelligence Library</h2>
 
-<div class="grid" id="libraryGrid"></div>
+<div id="lessonGrid" class="grid"></div>
 
 </section>
 
@@ -243,8 +290,8 @@ and evolve together.
 
 <div class="tool">ChatGPT</div>
 <div class="tool">Claude</div>
-<div class="tool">Midjourney</div>
 <div class="tool">Perplexity</div>
+<div class="tool">Midjourney</div>
 <div class="tool">Runway</div>
 
 </div>
@@ -259,12 +306,11 @@ and evolve together.
 
 <ul>
 
-<li>Prompt Engineering</li>
-<li>AI Agents</li>
-<li>Automation Systems</li>
-<li>AI Creativity</li>
-<li>Building AI Products</li>
-<li>Local AI Models</li>
+<li>Prompting</li>
+<li>AI Tools</li>
+<li>Agents</li>
+<li>Automation</li>
+<li>Creativity</li>
 
 </ul>
 
@@ -272,7 +318,7 @@ and evolve together.
 
 
 
-<section class="section">
+<section class="section" id="services">
 
 <h2>Services</h2>
 
@@ -280,24 +326,22 @@ and evolve together.
 
 <p>
 
-Future Human Lab provides consulting and strategic guidance
-for individuals and organizations navigating the AI transition.
+Future Human Lab offers consulting and training to help individuals
+and organizations navigate the transition into an AI-enabled world.
 
 </p>
 
 <ul>
 
 <li>AI Strategy Consulting</li>
-<li>Human + AI Workflow Design</li>
-<li>AI Learning Programs</li>
-<li>Future Skills Development</li>
+<li>AI Workflow Design</li>
+<li>AI Training & Workshops</li>
+<li>Human + AI Productivity Systems</li>
 
 </ul>
 
 <p>
-
-Contact for details.
-
+Contact us for more information.
 </p>
 
 </div>
@@ -314,14 +358,13 @@ Contact for details.
 
 <p>
 
-For collaboration, consulting, or research partnerships
-reach out via email.
+Interested in consulting, collaboration, or training?
 
 </p>
 
 <p>
 
-<strong>Email: contact@email.com</strong>
+Email: <strong>contact@email.com</strong>
 
 </p>
 
@@ -337,8 +380,8 @@ reach out via email.
 
 <p>
 
-Future Human Lab explores how humans and artificial intelligence
-can collaborate creatively and productively.
+Future Human Lab explores how humans and artificial intelligence can
+collaborate creatively and productively.
 
 The Intelligence Library captures insights from experimenting
 with AI systems, tools, and workflows.
@@ -360,50 +403,47 @@ Human + AI collaboration for the future.
 
 <script>
 
-const insights=[
+let lessons=[
 
 {
-title:"Context Matters",
-text:"AI performs dramatically better when given context about the goal and audience.",
-insight:"Future humans will brief AI like collaborators."
+title:"AI Insight #001 — Context Matters",
+text:"AI performs dramatically better when given context about the goal, audience, and constraints.",
+insight:"Future humans will brief AI like collaborators rather than tools."
 },
 
 {
-title:"Iteration > Perfection",
-text:"AI systems improve through iterative prompting and experimentation.",
-insight:"Exploration is the real interface of AI."
-},
-
-{
-title:"Human Taste Matters",
-text:"AI can generate infinite outputs but humans provide taste and direction.",
-insight:"Taste becomes the new intelligence."
+title:"AI Insight #002 — Iteration Beats Perfection",
+text:"AI works best through rapid iteration instead of trying to write the perfect prompt.",
+insight:"Great AI users explore ideas with the model rather than command it."
 }
 
 ]
 
-function loadLibrary(){
+function renderLessons(){
 
-const grid=document.getElementById("libraryGrid")
+let grid=document.getElementById("lessonGrid")
 
-insights.forEach((item,i)=>{
+grid.innerHTML=""
 
-const card=document.createElement("div")
+lessons.forEach((lesson,index)=>{
+
+let card=document.createElement("div")
+
 card.className="card"
 
 card.innerHTML=`
 
-<img src="https://picsum.photos/500/300?random=${i}">
+<img src="https://picsum.photos/400/200?random=${index}">
 
 <div class="card-content">
 
-<h3>${item.title}</h3>
+<h3>${lesson.title}</h3>
 
-<p>${item.text}</p>
+<p>${lesson.text}</p>
 
-<div class="label">Future Human Insight</div>
+<strong>Future Human Insight</strong>
 
-<p>${item.insight}</p>
+<p>${lesson.insight}</p>
 
 </div>
 
@@ -415,10 +455,9 @@ grid.appendChild(card)
 
 }
 
-loadLibrary()
+renderLessons()
 
 </script>
-
 
 </body>
 </html>
