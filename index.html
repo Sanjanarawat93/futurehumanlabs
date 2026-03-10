@@ -15,7 +15,6 @@ margin:0;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
 background:#050507;
 color:#eaeaf0;
-line-height:1.6;
 }
 
 /* HEADER */
@@ -24,25 +23,19 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:22px 10%;
+padding:20px 10%;
 position:sticky;
 top:0;
 background:rgba(10,10,15,0.7);
-backdrop-filter:blur(14px);
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(255,255,255,0.05);
-z-index:1000;
-}
-
-header h2{
-font-weight:500;
 }
 
 nav a{
-margin-left:28px;
+margin-left:25px;
 text-decoration:none;
-color:#aaa;
+color:#bbb;
 font-size:15px;
-transition:0.3s;
 }
 
 nav a:hover{
@@ -53,64 +46,59 @@ color:white;
 
 .hero{
 
-padding:160px 10%;
+padding:140px 10%;
 
 background:
-radial-gradient(circle at 20% 30%,rgba(255,150,120,0.15),transparent 40%),
-radial-gradient(circle at 80% 70%,rgba(120,170,255,0.15),transparent 40%),
-radial-gradient(circle at 50% 90%,rgba(255,200,140,0.12),transparent 40%),
+radial-gradient(circle at 70% 20%,rgba(255,120,80,0.15),transparent 40%),
+radial-gradient(circle at 30% 80%,rgba(120,180,255,0.15),transparent 40%),
 #050507;
 
 }
 
 .hero h1{
-font-size:64px;
+font-size:56px;
 margin-bottom:20px;
-letter-spacing:-1px;
 }
 
 .hero p{
-font-size:21px;
+font-size:20px;
 max-width:650px;
-color:#a0a0a8;
+color:#aaa;
+line-height:1.6;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
-padding:110px 10%;
+padding:100px 10%;
 }
 
 .section h2{
-font-size:36px;
-margin-bottom:45px;
-font-weight:500;
+font-size:34px;
+margin-bottom:40px;
 }
 
-/* GRID */
+/* LIBRARY GRID */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
+gap:35px;
 }
-
-/* LIBRARY CARDS */
 
 .card{
 
 background:rgba(255,255,255,0.03);
-border-radius:16px;
+border-radius:14px;
 border:1px solid rgba(255,255,255,0.06);
 overflow:hidden;
 
-transition:0.35s;
-
+transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 40px 80px rgba(0,0,0,0.6);
+transform:translateY(-6px);
+box-shadow:0 30px 70px rgba(0,0,0,0.6);
 }
 
 .card img{
@@ -120,12 +108,7 @@ object-fit:cover;
 }
 
 .card-content{
-padding:24px;
-}
-
-.card-content h3{
-margin-top:0;
-font-weight:500;
+padding:22px;
 }
 
 /* TOOLS */
@@ -133,26 +116,17 @@ font-weight:500;
 .tools{
 display:flex;
 flex-wrap:wrap;
-gap:18px;
+gap:20px;
 }
 
 .tool{
 
-padding:16px 26px;
+padding:18px 28px;
 border-radius:10px;
 
 background:rgba(255,255,255,0.03);
 border:1px solid rgba(255,255,255,0.05);
 
-color:#bbb;
-
-transition:0.3s;
-
-}
-
-.tool:hover{
-background:rgba(255,255,255,0.06);
-color:white;
 }
 
 /* ROADMAP */
@@ -165,7 +139,6 @@ padding:0;
 .roadmap li{
 
 background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.05);
 
 padding:16px;
 
@@ -173,21 +146,11 @@ margin-bottom:12px;
 
 border-radius:8px;
 
-}
-
-/* SERVICES */
-
-.services{
-
-background:linear-gradient(120deg,#0a0a10,#050505);
-
-border-radius:20px;
-
-padding:70px;
-
 border:1px solid rgba(255,255,255,0.05);
 
 }
+
+/* SERVICES */
 
 .services ul{
 list-style:none;
@@ -202,7 +165,7 @@ margin-bottom:12px;
 
 .contact{
 
-background:linear-gradient(140deg,#101015,#060606);
+background:linear-gradient(120deg,#111,#060606);
 
 border-radius:20px;
 
@@ -215,17 +178,11 @@ border:1px solid rgba(255,255,255,0.05);
 /* FOOTER */
 
 footer{
-
-padding:80px 10%;
-
+padding:60px 10%;
 text-align:center;
-
 color:#777;
-
 background:#030303;
-
-margin-top:120px;
-
+margin-top:80px;
 }
 
 </style>
@@ -263,8 +220,8 @@ margin-top:120px;
 
 Exploring the intersection of human creativity and artificial intelligence.
 
-A living archive of insights about how humans and AI can think, build,
-and evolve together.
+A living archive of insights about how humans and AI can think,
+build, and evolve together.
 
 </p>
 
@@ -318,33 +275,29 @@ and evolve together.
 
 
 
-<section class="section" id="services">
+<section class="section services" id="services">
 
 <h2>Services</h2>
 
-<div class="services">
-
 <p>
 
-Future Human Lab offers consulting and training to help individuals
-and organizations navigate the transition into an AI-enabled world.
+Future Human Lab offers consulting and strategic guidance for
+individuals and organizations navigating the AI transition.
 
 </p>
 
 <ul>
 
 <li>AI Strategy Consulting</li>
-<li>AI Workflow Design</li>
-<li>AI Training & Workshops</li>
-<li>Human + AI Productivity Systems</li>
+<li>Human + AI Workflow Design</li>
+<li>AI Learning Programs</li>
+<li>Future Skills Development</li>
 
 </ul>
 
 <p>
 Contact us for more information.
 </p>
-
-</div>
 
 </section>
 
@@ -358,7 +311,8 @@ Contact us for more information.
 
 <p>
 
-Interested in consulting, collaboration, or training?
+If you are interested in collaborating, consulting, or learning
+more about Future Human Lab, please reach out.
 
 </p>
 
@@ -380,8 +334,8 @@ Email: <strong>contact@email.com</strong>
 
 <p>
 
-Future Human Lab explores how humans and artificial intelligence can
-collaborate creatively and productively.
+Future Human Lab explores how humans and artificial intelligence
+can collaborate creatively and productively.
 
 The Intelligence Library captures insights from experimenting
 with AI systems, tools, and workflows.
@@ -403,18 +357,20 @@ Human + AI collaboration for the future.
 
 <script>
 
+/* Demo insights until Notion is connected */
+
 let lessons=[
 
 {
 title:"AI Insight #001 — Context Matters",
-text:"AI performs dramatically better when given context about the goal, audience, and constraints.",
-insight:"Future humans will brief AI like collaborators rather than tools."
+text:"AI performs dramatically better when given context about the goal and audience.",
+insight:"Future humans will brief AI like collaborators."
 },
 
 {
 title:"AI Insight #002 — Iteration Beats Perfection",
-text:"AI works best through rapid iteration instead of trying to write the perfect prompt.",
-insight:"Great AI users explore ideas with the model rather than command it."
+text:"AI works best through rapid iteration rather than perfect prompts.",
+insight:"Exploration beats command when working with AI."
 }
 
 ]
