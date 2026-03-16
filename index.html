@@ -5,240 +5,302 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Future Human Lab</title>
 <style>
-body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
-background:#050507;
-color:#eaeaf0;
-}
-/* HEADER */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 10%;
-position:sticky;
-top:0;
-background:rgba(10,10,15,0.7);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,0.05);
-}
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#bbb;
-font-size:15px;
-}
-nav a:hover{
-color:white;
-}
-/* HERO */
-.hero{
-padding:140px 10%;
-background:
-radial-gradient(circle at 70% 20%,rgba(255,120,80,0.15),transparent 40%),
-radial-gradient(circle at 30% 80%,rgba(120,180,255,0.15),transparent 40%),
-#050507;
-}
-.hero h1{
-font-size:56px;
-margin-bottom:20px;
-}
-.hero p{
-font-size:20px;
-max-width:650px;
-color:#aaa;
-line-height:1.6;
-}
-/* SECTIONS */
-.section{
-padding:100px 10%;
-}
-.section h2{
-font-size:34px;
-margin-bottom:40px;
-}
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:35px;
-}
-.card{
-background:rgba(255,255,255,0.03);
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.06);
-overflow:hidden;
-transition:0.3s;
-}
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 30px 70px rgba(0,0,0,0.6);
-}
-.card img{
-width:100%;
-height:160px;
-object-fit:cover;
-}
-.card-content{
-padding:22px;
-}
-/* TOOLS */
-.tools{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-}
-.tool{
-padding:18px 28px;
-border-radius:10px;
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.05);
-}
-/* ROADMAP */
-.roadmap ul{
-list-style:none;
-padding:0;
-}
-.roadmap li{
-background:rgba(255,255,255,0.03);
-padding:16px;
-margin-bottom:12px;
-border-radius:8px;
-border:1px solid rgba(255,255,255,0.05);
-}
-/* SERVICES */
-.services ul{
-list-style:none;
-padding:0;
-}
-.services li{
-margin-bottom:12px;
-}
-/* CONTACT */
-.contact{
-background:linear-gradient(120deg,#111,#060606);
-border-radius:20px;
-padding:60px;
-border:1px solid rgba(255,255,255,0.05);
-}
-/* FOOTER */
-footer{
-padding:60px 10%;
-text-align:center;
-color:#777;
-background:#030303;
-margin-top:80px;
-}
-/* EMBEDDED NOTION LIBRARY */
-.notion-embed-container {
-  height: 1200px;          /* Adjust this height based on how much content you have – start with 800–1600px */
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.06);
-  background: rgba(255,255,255,0.03); /* Fallback color while loading */
-}
+  :root {
+    --accent: #6a5acd;        /* Soft indigo for AI/future vibe */
+    --accent-hover: #7b6be0;
+    --bg-dark: #050507;
+    --bg-card: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.08);
+    --text: #eaeaf0;
+    --text-muted: #aaa;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* HEADER – glassmorphism */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    background: rgba(20,20,30,0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+  }
+
+  header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+  }
+
+  nav a {
+    margin-left: 28px;
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: white;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 160px 8% 140px;
+    background: 
+      radial-gradient(circle at 75% 15%, rgba(106,90,205,0.18), transparent 50%),
+      radial-gradient(circle at 25% 85%, rgba(120,180,255,0.12), transparent 50%),
+      var(--bg-dark);
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3.8rem;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .hero p {
+    font-size: 1.35rem;
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--text-muted);
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 120px 8%;
+  }
+
+  .section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 48px;
+    text-align: center;
+    letter-spacing: -0.5px;
+  }
+
+  /* GRID & CARDS – subtle hover glow */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.35s ease;
+    backdrop-filter: blur(8px);
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(106,90,205,0.15);
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 24px;
+  }
+
+  /* TOOLS – pill style with hover */
+  .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .tool {
+    padding: 14px 26px;
+    border-radius: 50px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .tool:hover {
+    background: rgba(106,90,205,0.12);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  /* BUTTON – accent style */
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(106,90,205,0.25);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(106,90,205,0.35);
+  }
+
+  /* LIBRARY SECTION – centered placeholder */
+  #library .placeholder {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(106,90,205,0.06);
+    border-radius: 20px;
+    border: 1px dashed var(--border);
+  }
+
+  /* CONTACT – glass */
+  .contact {
+    background: linear-gradient(135deg, #111 0%, #0a0a15 100%);
+    border-radius: 24px;
+    padding: 70px 40px;
+    border: 1px solid var(--border);
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 80px 8%;
+    text-align: center;
+    color: #777;
+    background: #020204;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 120px 6% 100px; }
+    .section { padding: 80px 6%; }
+    .hero h1 { font-size: 2.8rem; }
+    nav a { margin-left: 18px; font-size: 0.95rem; }
+  }
 </style>
 </head>
 <body>
 <header>
-<h2>Future Human Lab</h2>
-<nav>
-<a href="#library">Library</a>
-<a href="#tools">Tools</a>
-<a href="#roadmap">Roadmap</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-<a href="#about">About</a>
-</nav>
+  <h2>Future Human Lab</h2>
+  <nav>
+    <a href="#library">Library</a>
+    <a href="#tools">Tools</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </nav>
 </header>
+
 <section class="hero">
-<h1>Future Human Lab</h1>
-<p>
-Exploring the intersection of human creativity and artificial intelligence.
-A living archive of insights about how humans and AI think, build, and evolve together.
-</p>
-</section>
-<section class="section" id="library">
-<h2>Intelligence Library</h2>
-<!-- Embedded Notion Database – replaces the old JS fetch entirely -->
-<div class="notion-embed-container">
-  <iframe 
-    src="ntn_Y9552500394aZxZM439KlYK116QedQ337CZcuw3AVNZ6Jk?embed=true"
-    style="width:100%; height:100%; border:none;"
-    allowfullscreen
-    loading="lazy"
-  ></iframe>
-</div>
-<!-- Optional fallback text if iframe fails to load -->
-<noscript>
-  <p style="text-align:center; color:#aaa; margin:40px 0;">
-    Please enable JavaScript or visit the library directly: 
-    <a href="ntn_Y9552500394aZxZM439KlYK116QedQ337CZcuw3AVNZ6Jk" target="_blank" style="color:#4a6bff;">Open Intelligence Library</a>
+  <h1>Future Human Lab</h1>
+  <p>
+    Exploring the intersection of human creativity and artificial intelligence.<br>
+    A living archive of insights about how humans and AI think, build, and evolve together.
   </p>
-</noscript>
 </section>
+
+<section class="section" id="library">
+  <h2>Intelligence Library</h2>
+  <div class="placeholder">
+    <h3 style="margin-bottom: 24px; color: var(--accent);">Our growing collection of AI insights</h3>
+    <p style="max-width: 620px; margin: 0 auto 32px; color: var(--text-muted);">
+      Real experiments, prompts, workflows, and reflections on human + AI collaboration.<br>
+      Now in beautiful gallery view with cover images — browse, read, and get inspired!
+    </p>
+    <a href="https://mini-brownie-9da.notion.site/Intelligence-Library-31e2395f96aa80c2a09cfb88fb28b2be?source=copy_link" 
+       target="_blank" 
+       class="btn-primary">
+      Explore the Intelligence Library →
+    </a>
+    <p style="margin-top: 32px; font-size: 0.95rem; color: #888;">
+      (Gallery cards with covers – live updates from Notion)
+    </p>
+  </div>
+</section>
+
 <section class="section" id="tools">
-<h2>AI Tools Lab</h2>
-<div class="tools">
-<div class="tool">ChatGPT</div>
-<div class="tool">Claude</div>
-<div class="tool">Midjourney</div>
-<div class="tool">Perplexity</div>
-<div class="tool">Runway</div>
-</div>
+  <h2>AI Tools Lab</h2>
+  <div class="tools">
+    <div class="tool">ChatGPT</div>
+    <div class="tool">Claude</div>
+    <div class="tool">Midjourney</div>
+    <div class="tool">Perplexity</div>
+    <div class="tool">Runway</div>
+  </div>
 </section>
+
 <section class="section roadmap" id="roadmap">
-<h2>Learning Roadmap</h2>
-<ul>
-<li>Prompt Engineering</li>
-<li>AI Agents</li>
-<li>Automation</li>
-<li>AI + Creativity</li>
-<li>Building AI Tools</li>
-<li>Local AI Models</li>
-</ul>
+  <h2>Learning Roadmap</h2>
+  <ul style="list-style: none; padding: 0; max-width: 700px; margin: 0 auto;">
+    <li style="background: var(--bg-card); padding: 18px; margin-bottom: 12px; border-radius: 10px; border: 1px solid var(--border);">Prompt Engineering</li>
+    <li style="background: var(--bg-card); padding: 18px; margin-bottom: 12px; border-radius: 10px; border: 1px solid var(--border);">AI Agents</li>
+    <li style="background: var(--bg-card); padding: 18px; margin-bottom: 12px; border-radius: 10px; border: 1px solid var(--border);">Automation</li>
+    <li style="background: var(--bg-card); padding: 18px; margin-bottom: 12px; border-radius: 10px; border: 1px solid var(--border);">AI + Creativity</li>
+    <li style="background: var(--bg-card); padding: 18px; margin-bottom: 12px; border-radius: 10px; border: 1px solid var(--border);">Building AI Tools</li>
+    <li style="background: var(--bg-card); padding: 18px; margin-bottom: 12px; border-radius: 10px; border: 1px solid var(--border);">Local AI Models</li>
+  </ul>
 </section>
+
 <section class="section services" id="services">
-<h2>Services</h2>
-<p>
-Future Human Lab provides consulting and training for organizations
-learning to work effectively with AI systems.
-</p>
-<ul>
-<li>AI Strategy Consulting</li>
-<li>Human + AI Workflow Design</li>
-<li>AI Training Programs</li>
-<li>Future Skills Development</li>
-</ul>
-<p>Contact us for details.</p>
+  <h2>Services</h2>
+  <p style="max-width: 760px; margin: 0 auto 32px; text-align: center;">
+    Future Human Lab provides consulting and training for organizations learning to work effectively with AI systems.
+  </p>
+  <ul style="list-style: none; padding: 0; max-width: 700px; margin: 0 auto;">
+    <li style="margin-bottom: 16px; font-size: 1.1rem;">AI Strategy Consulting</li>
+    <li style="margin-bottom: 16px; font-size: 1.1rem;">Human + AI Workflow Design</li>
+    <li style="margin-bottom: 16px; font-size: 1.1rem;">AI Training Programs</li>
+    <li style="margin-bottom: 16px; font-size: 1.1rem;">Future Skills Development</li>
+  </ul>
+  <p style="text-align: center; margin-top: 40px;">Contact us for details.</p>
 </section>
+
 <section class="section" id="contact">
-<h2>Contact</h2>
-<div class="contact">
-<p>
-For consulting or collaboration inquiries:
-</p>
-<p>
-Email: <strong>contact@futurehumanlabs.ca</strong>
-</p>
-</div>
+  <h2>Contact</h2>
+  <div class="contact">
+    <p style="font-size: 1.3rem; margin-bottom: 24px;">
+      For consulting or collaboration inquiries:
+    </p>
+    <p style="font-size: 1.4rem; font-weight: 600;">
+      Email: <a href="mailto:contact@futurehumanlabs.ca" style="color: var(--accent); text-decoration: none;">contact@futurehumanlabs.ca</a>
+    </p>
+  </div>
 </section>
+
 <section class="section" id="about">
-<h2>About</h2>
-<p>
-Future Human Lab explores how humans and artificial intelligence
-collaborate creatively and productively.
-The Intelligence Library documents insights from real experiments
-with AI tools, workflows, and thinking systems.
-</p>
+  <h2>About</h2>
+  <p style="max-width: 760px; margin: 0 auto; text-align: center;">
+    Future Human Lab explores how humans and artificial intelligence collaborate creatively and productively.<br>
+    The Intelligence Library documents insights from real experiments with AI tools, workflows, and thinking systems.
+  </p>
 </section>
+
 <footer>
-Future Human Lab
-Human + AI collaboration for the future.
+  Future Human Lab<br>
+  Human + AI collaboration for the future.
 </footer>
-
-<!-- Removed the old <script> entirely – no more API calls or CORS issues -->
-
 </body>
 </html>
